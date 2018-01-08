@@ -1,0 +1,2 @@
+1. Automatic mvn site:
+    View -> Tool Windows -> Maven Projects -> Lifecycle -> right click on site -> 'Execute After Build'
