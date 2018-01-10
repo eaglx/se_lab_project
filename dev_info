@@ -1,2 +1,4 @@
-1. Automatic mvn site:
+1. [Intellij] Automatic mvn site:
     View -> Tool Windows -> Maven Projects -> Lifecycle -> right click on site -> 'Execute After Build'
+
+2. [Spring-boot] Test on addr: 127.0.0.1:8080
