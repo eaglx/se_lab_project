@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.4.2/react.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.4.2/react-dom.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.21.1/babel.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.6/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src=js/controller.js></script>
+
+
+</head>
+
+<body ng-app="app" ng-controller="controller as me">
+
+<div align="center" ng-if="me.isBackButtonShow">
+    <p>{{me.building}}</p>
+    <button type="button" class="button" data-toggle="modal"
+            ng-click="me.onBackButtonClick()">
+        <span class="glyphicon glyphicon-folder-open"></span>Go Back
+    </button>
+    <table>
+        <p>id: {{me.building.id}} nazwa: {{me.building.name}}</p>
+        <tr ng-repeat="level in me.building.levelList">
+            <td>poziom: {{level.name}}</td>
+            <td>#</td>
+            <td>area: {{level.area}}</td>
+            <td>#</td>
+            <td>cube: {{level.cube}}</td>
+            <td>#</td>
+            <td>heating: {{level.heating}}</td>
+            <td>#</td>
+            <td>light: {{level.light}}</td>
+        </tr>
+        <p>area: {{me.building.area}}</p>
+        <p>cube: {{me.building.cube}}</p>
+        <p>heating: {{me.building.heating}}</p>
+        <p>light: {{me.building.light}}</p>
+    </table>
+</div>
+
+<div ng-if="me.isDownloadShow"
+     style="position: absolute; top: 50%; left: 50%; transform: translateX(-50%) translateY(-50%);">
+
+    <div>
+        <input type="text" ng-model="me.id" class="form-control" id="id"
+               placeholder="Wrtie building's id">
+        <td>
+            <button type="button" class="button" data-toggle="modal"
+                    ng-click="me.onDownloadButtonClick()">
+                <span class="glyphicon glyphicon-folder-open"></span>Get info
+            </button>
+        </td>
+
+    </div>
+    <br>
+    <div>
+        <form action="http://127.0.0.1:8080/addBuilding.html">
+            <input type="submit" value="Add">
+            </input>
+        </form>
+    </div>
+</div>
+
+</body>
+</html>

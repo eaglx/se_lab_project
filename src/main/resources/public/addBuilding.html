@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.4.2/react.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.4.2/react-dom.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.21.1/babel.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.6/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src=js/addController.js></script>
+
+</head>
+
+<body ng-app="app" ng-controller="addController as addC">
+
+<div>
+    <form action="http://127.0.0.1:8080/">
+        <input type="submit" value="Go Back">
+        </input>
+    </form>
+</div>
+
+<div>
+    <button type="button" class="button" data-toggle="modal"
+            ng-click="addC.onAddButtonClick()">
+        <span class="glyphicon glyphicon-folder-open"></span>Add
+    </button>
+</div>
+
+<table>
+
+    <tr>
+        <p>
+            {"id":"2","name":"Przyklad","levelList":
+            [{"id":"1","name":"parter",[{"id":"1","name":"pokoj1","area":2,"cube":0,"heating":0,"light":0}]}],
+            {"id":"2","name": "1pietro",[{"id":"1","name":"pokoj1","area":20,"cube":0,"heating":0,"light":0}]}],
+            "area":22,"heating":0,"cube":0,"light":0}
+        </p>
+    </tr>
+
+<tr>
+<textarea id="textarea" rows="100" cols="70">
+</textarea>
+</tr>
+
+</table>
+</body>
+</html>

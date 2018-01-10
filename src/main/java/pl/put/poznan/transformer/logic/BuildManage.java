@@ -1,18 +1,33 @@
 package pl.put.poznan.transformer.logic;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
 /**
- * This is just an example to show that the logic should be outside the REST service.
+ * Communication with browser
  */
+@Service
 public class BuildManage {
 
-    private final String[] transforms;
+    private BuildingService buildingService;
 
-    public BuildManage(String[] transforms){
-        this.transforms = transforms;
+    @Autowired
+    public BuildManage(BuildingService buildingService) {
+        this.buildingService = buildingService;
     }
 
-    public String transform(String text){
-        // of course normally it would to something based on transforms
-        return text.toUpperCase();
+    public Building readBuilding(String id) {
+        return buildingService.readBuilding(id);
     }
+
+    public Building createBuilding(String building) {
+        return buildingService.createBuilding(convertToBuilding(building));
+    }
+
+    private Building convertToBuilding(String building) {
+        System.out.println(building);
+        // TODO: Parse json and create object
+        return null;
+    }
+
 }
